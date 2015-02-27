@@ -1,0 +1,29 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+bash /root/bin/radio-init.sh
+#echo "Sync clock..." > /tmp/cron_local.log
+#ntpdate time.stdtime.gov.tw
+
+#echo "Fix for LIRC....." >> /tmp/cron_local.log
+# fix for Lirc
+#ln -s /dev/lirc0 /dev/lirc
+
+#echo "Startup the Internet Radio" >> /tmp/cron_local.log
+# Startup the Internet Radio
+#nohup python /root/NextRadio/radio-start_c.py &
+#sleep 2
+#su - -c "nohup python /root/NextRadio/httpserver_droopy.py &"
+#sleep 2
+
+exit 0
