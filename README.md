@@ -1,4 +1,4 @@
-# NextRadio
+# NextRadio v2
 NextRadio is an Internet Radio without opening the PC.
 - Main codes are written in Python 2.x
 - The embedded system is based on Debian for SuperH processor
