@@ -7,7 +7,7 @@ NextRadio is an Internet Radio without opening the PC.
 * Mplayer is required for main player
 
 ![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot1.jpg)
-![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot2.jpg)
+![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot2.png)
 
 The project is also shared on OpenFoundry site. http://www.openfoundry.org/of/projects/2263
 
