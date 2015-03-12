@@ -6,7 +6,8 @@ NextRadio is an Internet Radio without opening the PC.
 * The embedded system is based on Debian for SuperH processor
 * Mplayer is required for main player
 
-![image](https://copy.com/thumbs_public/nTHT0gELSGYGVg8r/NextRadio-Inside.jpg?size=1024)
+![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot1.jpg)
+![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot2.jpg)
 
 The project is also shared on OpenFoundry site. http://www.openfoundry.org/of/projects/2263
 
