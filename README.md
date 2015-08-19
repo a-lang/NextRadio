@@ -11,4 +11,8 @@ NextRadio is an Internet Radio without opening the PC.
 
 The project is also shared on OpenFoundry site. http://www.openfoundry.org/of/projects/2263
 
-Official website from OSSLab: http://nextradio.openfoundry.org/ or http://tinyurl.com/meusj9x
+If you're interested in this H/W and also live in Taiwan I can give you one.
+
+### Links
+* Official website from OSSLab: http://nextradio.openfoundry.org/ or http://tinyurl.com/meusj9x
+* Our forum: https://groups.google.com/group/asterisk-tw/topics?hl=zh_tw
