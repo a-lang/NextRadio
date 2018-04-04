@@ -65,6 +65,8 @@
 #              it will resume playback from the song next time.
 # [2014-11-16] By A-Lang
 #              Fixed that the Oo audio is played when playing the radio but eth0 is down
+# [2018-04-04] By A-Lang
+#              Added the prompt when booting is done and toggle channels
 #
 
 import socket
@@ -119,7 +121,11 @@ def PlayRadio(station,vol_num=100):
         if '.pls' in stationlist[station] or '.asx' in stationlist[station] or '.asp' in stationlist[station] or '.m3u' in stationlist[station] :
             Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 256 -playlist %s & " %(last_volnum,stationlist[station].rstrip("\r\n"))
         else:
-            Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 256 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
+            print "Debug: Downloading the playlist"
+            prompt = audio_dir + "playlist_downloading_pls_wait.mp3"
+            Play_Audio(prompt, 3)
+            #Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 256 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
+            Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 4096 -cache-min 10 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
 
         if 'youtube.com' in stationlist[station] :
             force_download = 0
@@ -232,7 +238,7 @@ def PlayU2(url, station_id, force_download, vol_num=70):
     PlayListFile= "%s.%d" %(U2_PlayList_Path, station_id)
     if (force_download or not os.path.exists(PlayListFile)) :
         print "Debug: Downloading the playlist"
-        prompt = audio_dir + "playlist_downloading_pls_wait.wav"
+        prompt = audio_dir + "playlist_downloading_pls_wait.mp3"
         Play_Audio(prompt, 5, vol_num)
         LoadU2List(url, station_id)
     #Count = int(check_output(["wc", "-l", PlayListFile]).split()[0])
@@ -255,7 +261,7 @@ def PlayDBFM(url, station_id, force_download, vol_num=70):
     PlayListFile= "%s.%d" %(DBFM_PlayList_Path, station_id)
     if (force_download or not os.path.exists(PlayListFile) or file_expired(PlayListFile, 1800)):
         print "Debug: Downloading the playlist"
-        prompt = audio_dir + "playlist_downloading_pls_wait.wav"
+        prompt = audio_dir + "playlist_downloading_pls_wait.mp3"
         Play_Audio(prompt, 5, vol_num)
         LoadDBFMList(url, station_id)
     print "Debug: Start to play the Douban.FM streaming........."
@@ -483,24 +489,6 @@ def db_map(vol_num):
     return vol_num
 
 
-fd = open ("/root/NextRadio/upload/radio.txt","r")
-for line in fd:
-    msg = re.search('^#',line)
-    sys.stdout.write('.')
-    if msg:
-        pass
-    else:
-        stationlist.append(line)
-        i = i+1
-fd.close()
-
-max_stations = i-1
-print "\n" + stationlist[max_stations]
-PlayRadio(current_station,vol_num)
-client_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-client_socket.connect(sockfile);
-
-
 def ProcessKey(current_station,vol_num):
     station_num = 0
     funckey = 0
@@ -584,6 +572,28 @@ def ProcessKey(current_station,vol_num):
                 
             elif cmd_list[2] == "search":
                 Say_Digital(current_station,1)
+
+
+fd = open ("/root/NextRadio/upload/radio.txt","r")
+for line in fd:
+    msg = re.search('^#',line)
+    sys.stdout.write('.')
+    if msg:
+        pass
+    else:
+        stationlist.append(line)
+        i = i+1
+fd.close()
+
+max_stations = i-1
+print "\n" + stationlist[max_stations]
+#PlayRadio(current_station,vol_num)
+prompt = audio_dir + "bootup_is_done.mp3"
+Play_Audio(prompt, 3)
+
+client_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+client_socket.connect(sockfile);
+
                 
 
 while 1:
