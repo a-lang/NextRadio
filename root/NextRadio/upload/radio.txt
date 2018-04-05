@@ -1,69 +1,50 @@
 # NextRadio 網路電台播放清單
-# 更新於 2018-2-7
+# 更新於 2018-4-5
 #: ICRT
 http://live.leanstream.co/ICRTFM-MP3?args=tunein_mp3
-#2:真心之音廣播電台
+#:真心之音廣播電台
 mms://b139.ek21.com/heart1
-#3:大千電台 FM99.1
+#:大千電台 FM99.1
 http://stream.superfm99-1.com.tw:8554/
-#4:台灣鄉愁電台
+#:台灣鄉愁電台
 http://1.34.113.167:8000/
-#5:寶島新聲 FM98.5
+#:寶島新聲 FM98.5
 http://stream.superfm99-1.com.tw:8555/
-#6:綠色和平電台 FM97.3
-mms://122.116.179.126/greenpeace 
-#7: 省都廣播電台 FM93.7
-mms://live.fm937.tw/fm937
-#8: 台中廣播 FM1007
+#: 台中廣播 FM1007
 mms://59.125.61.115/FM1007live
-#9:Taiwan-Lounge
-http://listen.radionomy.com/taiwan-lounge
-#10:古典音樂台 FM97.7
+#:古典音樂台 FM97.7
 mms://media.family977.com.tw/live
-#:中廣-亞洲語網
-mms://media.ccdntech.com/wmtencoder/rti/cbs6.wmv
-#:中廣-音樂網
-mms://media.ccdntech.com/wmtencoder/rti/cbs5.wmv
-#:中廣-歐美網
-mms://media.ccdntech.com/wmtencoder/rti/cbs4.wmv
-#:中廣-音樂網
-mms://media.ccdntech.com/wmtencoder/rti/cbs3.wmv
-#:中廣-華語網
-mms://media.ccdntech.com/wmtencoder/rti/cbs2.wmv
 #:世新廣播電台FM 88.1
 mms://shrs.shu.edu.tw/FM88.1
 #:世新廣播電台AM 729
 mms://shrs.shu.edu.tw/AM729
-#:國立教育廣播電台
-mms://liverec.ner.gov.tw/FMLive
 #: 清華大學電台
 http://140.114.188.43:8000/thbs
-## 中國地區電台
-#:北京電台-音樂廣播 FM97.4
-http://alive.rbc.cn/fm974
-#:北京電台-文藝廣播 FM87.6
-mms://alive.rbc.cn/fm876
-#:北京新聞廣播
-mms://alive.rbc.cn/fm1006
-#:北京電台-古典音樂 FM98.6
-http://alive.rbc.cn/cfm986
-#:中國國際廣播電台
-http://live.hitfm.cn/fm887.wsx
-#:中國國際廣播電台-都市流行頻道
-http://live.cri.cn/pop.wsx
+## 海外華人電台
+#: 星島中文電台
+http://50.7.71.27:9725/stream
+#: 西雅圖中文電台
+http://edgev1.den.echo.liquidcompass.net/KKNWAMMP3
+## 香港電台
 #:香港電台第一台
 http://stm.rthk.hk/radio1
 #:香港電台第二台
 http://stm.rthk.hk/radio2
 ## 80年代流行英文歌曲
-#: 80s Mixed
-http://yp.shoutcast.com/sbin/tunein-station.pls?id=183154
-#: HKGFM 80s
-http://yp.shoutcast.com/sbin/tunein-station.pls?id=739207
-#: Club 80s
-http://yp.shoutcast.com/sbin/tunein-station.pls?id=9494940
-#: SKY.FM - Best of the 80's
-http://listen.sky.fm/public3/the80s.pls
+#: 80s STATION
+http://204.45.183.92:9988/stream
+#: 113FM Awesome 80s USA
+http://75.126.5.154:80/1719_128
+#: 1000 HITS 80s
+http://91.121.155.204:8048/stream
+#: Awesome 80s
+http://149.56.10.118:8050/a80s.mp3
+#: All80s
+http://109.169.26.139:8432/stream
+#: The Mix Radio 80s
+http://51.255.127.128:8016/stream
+#: All Euro 80's (www.1.fm)
+http://185.33.21.112:80/80s_90s_128
 ## 新加坡-華語
 #:Capital FM95.8
 http://vtuner.com/setupapp/guide/asp/func/dynampls.asp?link=1&id=2275
@@ -77,13 +58,15 @@ http://vtuner.com/setupapp/guide/asp/func/dynampls.asp?link=1&id=2274
 usb:/mymusic/回憶
 #: My USB - 台語精選
 usb:/mymusic/台語精選
-#: My USB - 國語精選
-usb:/mymusic/國語精選
 #: My USB - 國台語對唱
 usb:/mymusic/國台語對唱
 #: My USB - 中國新民歌
 usb:/mymusic/中國新民歌
-#: My USB - 大陸國語串燒
-usb:/mymusic/大陸國語串燒
+#: My USB - 佛曲
+usb:/mymusic/佛曲
+#: My USB - 國語精選
+usb:/mymusic/國語精選
+#: My USB - 電音舞曲
+usb:/mymusic/電音舞曲
 #: My USB - 輕音樂
 usb:/mymusic/輕音樂
