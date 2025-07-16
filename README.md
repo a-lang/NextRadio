@@ -9,8 +9,7 @@ NextRadio is an Internet Radio without opening the PC.
 ![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot1.jpg)
 ![image](https://raw.githubusercontent.com/a-lang/NextRadio/master/Screenshot2.png)
 
-Demonstration:
-[![demo](https://asciinema.org/a/3582.png)](https://asciinema.org/a/3582?autoplay=1)
+![Screenshot3](Screenshot3.png)
 
 The project is also shared on OpenFoundry site. http://www.openfoundry.org/of/projects/2263
 
