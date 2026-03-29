@@ -9,7 +9,7 @@
 #
 # Changes Logs:
 # [2013-04-20] By A-Lang
-#              Replaced the lircrc with the mplayer's slave mode
+#              Replaced the lircrc with the mplayer's subordinate mode
 #              Added the audio volume control
 #              Added the Mute,Power keys function
 # [2013-04-21] By A-Lang
@@ -119,13 +119,13 @@ def PlayRadio(station,vol_num=100):
         last_volnum = db_map(vol_num)
 
         if '.pls' in stationlist[station] or '.asx' in stationlist[station] or '.asp' in stationlist[station] or '.m3u' in stationlist[station] :
-            Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 256 -playlist %s & " %(last_volnum,stationlist[station].rstrip("\r\n"))
+            Play_station = "mplayer -ao alsa -volume %d -subordinate -quiet -cache 256 -playlist %s & " %(last_volnum,stationlist[station].rstrip("\r\n"))
         else:
             print "Debug: Downloading the playlist"
             prompt = audio_dir + "playlist_downloading_pls_wait.mp3"
             Play_Audio(prompt, 3)
-            #Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 256 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
-            Play_station = "mplayer -ao alsa -volume %d -slave -quiet -cache 4096 -cache-min 10 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
+            #Play_station = "mplayer -ao alsa -volume %d -subordinate -quiet -cache 256 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
+            Play_station = "mplayer -ao alsa -volume %d -subordinate -quiet -cache 4096 -cache-min 10 %s & " %(last_volnum, stationlist[station].rstrip("\r\n"))
 
         if 'youtube.com' in stationlist[station] :
             force_download = 0
@@ -243,7 +243,7 @@ def PlayU2(url, station_id, force_download, vol_num=70):
         LoadU2List(url, station_id)
     #Count = int(check_output(["wc", "-l", PlayListFile]).split()[0])
     print "Debug: Start to play the U2 streaming........."
-    cmd_play="mplayer -ao alsa -volume %d -slave -quiet -novideo -playlist %s & " %(vol_num, PlayListFile)
+    cmd_play="mplayer -ao alsa -volume %d -subordinate -quiet -novideo -playlist %s & " %(vol_num, PlayListFile)
     player = subprocess.Popen(cmd_play.split(" "), stdin=PIPE)
     #Check_Player(player.pid, Count)
     Check_Player(player.pid, 18)
@@ -265,7 +265,7 @@ def PlayDBFM(url, station_id, force_download, vol_num=70):
         Play_Audio(prompt, 5, vol_num)
         LoadDBFMList(url, station_id)
     print "Debug: Start to play the Douban.FM streaming........."
-    cmd_play="mplayer -ao alsa -volume %d -slave -quiet -novideo -playlist %s & " %(vol_num, PlayListFile)
+    cmd_play="mplayer -ao alsa -volume %d -subordinate -quiet -novideo -playlist %s & " %(vol_num, PlayListFile)
     player = subprocess.Popen(cmd_play.split(" "), stdin=PIPE)
     #Check_Player(player.pid, Count)
     Check_Player(player.pid, 18)
@@ -308,7 +308,7 @@ def PlayUSBList(playlist_path, vol_num=80):
     Close_Player()
 
     songsListFile= "-loop 0 -playlist " + playlist_path                    
-    cmd="mplayer -ao alsa -volume %d -slave -quiet -novideo %s & " %(vol_num, songsListFile)
+    cmd="mplayer -ao alsa -volume %d -subordinate -quiet -novideo %s & " %(vol_num, songsListFile)
     #player = subprocess.Popen(cmd.split(" "), stdin=PIPE)
     player = subprocess.Popen(cmd.split(" "), stdin=PIPE, stdout=PIPE)
 
